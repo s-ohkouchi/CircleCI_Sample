@@ -19,7 +19,7 @@ jobs:
       - checkout
       - run: mkdir -p /tmp/artifacts
       - run: apt-get update
-      - run: apt-get install g++-arm-linux-gnueabihf
+      - run: apt-get install -y g++-arm-linux-gnueabihf
       - run: arm-linux-gnueabihf-gcc -o hello_arm hello.c
       - run: cp hello_arm /tmp/artifacts
       - store_artifacts:
