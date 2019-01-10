@@ -5,11 +5,13 @@ jobs:
       - image: gcc:latest
     steps:
       - checkout
+      - run: mkdir -p /tmp/artifacts
       - run: make
       - run: ./hello
+      - run: cp hello /tmp/artifacts
       - store_artifacts:
-        path: ~/hello
-        destination: hello
+          path: /tmp/artifacts
+          destination: build
 
 workflows:
   version: 2
