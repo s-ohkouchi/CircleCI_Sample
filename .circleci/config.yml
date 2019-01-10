@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run: make
       - run: ./hello
-      - run: cp -p hello $CIRCLE_ARTIFACTS
+      - run: cp hello $CIRCLE_ARTIFACTS
 
 workflows:
   version: 2
